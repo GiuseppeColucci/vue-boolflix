@@ -13,12 +13,12 @@
     
 <div id="app">
 <nav>
-    <input v-mode='search'type="text">
+    <input v-model='search'type="text">
     <button>cerca</button>
 </nav>
 <header>
     <div class="container">      
-        <div class="box-element"v-for='element in boxListFilms'>
+        <div class=" box-element " v-for = ' element in boxListFilms '>
             <h1>{{element.title}}</h1>
             <h5>{{element.original_title}}</h5>
             <p>{{element.original_language}}</p>
