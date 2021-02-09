@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="app">
+<nav>
+    <input v-mode='search'type="text">
+    <button>cerca</button>
+</nav>
+<header>
+    <div class="container">      
+        <div class="box-element"v-for='element in boxListFilms'>
+            <h1>{{element.title}}</h1>
+            <h5>{{element.original_title}}</h5>
+            <p>{{element.original_language}}</p>
+            <p>{{element.vote_average}}</p>
+           
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+
+
+
+
+
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
