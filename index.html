@@ -14,12 +14,19 @@
     
 <div id="app">
 <nav>
-    <input v-model='search'type="text">
-    <button @click='totalSearch'>cerca</button>
+    <div class="container-nav">
+        <div class="title">
+            <h1>netflix</h1>
+        </div>
+        <div class="searc-bar">
+            <input v-model='search'type="text">
+            <button @click='totalSearch'>cerca</button>
+        </div>
+    </div>
 </nav>
 <header>
     <!-- parte films -->
-    <!-- <div class="container">      
+    <div class="container">      
         <div class=" box-element " v-for = ' element in boxListFilms '>
             <h1>{{element.title}}</h1>
             <img :src="imgLink +(element.poster_path)" alt="">
@@ -29,7 +36,7 @@
             <span >{{element.original_language}}</span>
             <i v-for="n in Voto(element.vote_average)"class="fas fa-star"></i>
             <i v-for="n in (5 - Voto(element.vote_average))" class="far fa-star"></i>
-        </div> -->
+        </div>
       
           <!-- parte serie tv-->
     <div class="container">      

@@ -4,7 +4,7 @@ new Vue({
         boxListFilms:[],
         boxSerieTv:[],
         search:'',
-        imgLink:'https://image.tmdb.org/t/p/w500/'
+        imgLink:'https://image.tmdb.org/t/p/w342/'
     },
     methods:{
         totalSearch:function(){
