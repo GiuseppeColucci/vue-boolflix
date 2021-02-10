@@ -26,30 +26,57 @@
 </nav>
 <header>
     <!-- parte films -->
-    <div class="container">      
-        <div class=" box-element " v-for = ' element in boxListFilms '>
-            <h1>{{element.title}}</h1>
-            <img :src="imgLink +(element.poster_path)" alt="">
-            <h5>{{element.original_title}}</h5>            
-            <span class="flag"v-if="element.original_language === 'en' "><img src="./img/en.png" alt=""></span>       
-            <span class="flag"v-if="element.original_language === 'it' "><img src="./img/it.png" alt=""></span>
-            <span >{{element.original_language}}</span>
-            <i v-for="n in Voto(element.vote_average)"class="fas fa-star"></i>
-            <i v-for="n in (5 - Voto(element.vote_average))" class="far fa-star"></i>
-        </div>
-      
+    <div class="container">  
+        <ul>
+            <li class=" box-element-card " v-for = ' element in boxListFilms '>
+                <h1>{{element.title}}</h1>
+                <div class="box-img">
+                    <img :src="imgLink +(element.poster_path)" alt="">
+                </div>
+                <h5>{{element.original_title}}</h5>
+                <p>lingua : 
+                    <div class="box-flag"> 
+                        <span class="flag"v-if="element.original_language === 'en' ">
+                        <img src="./img/en.png" alt="">
+                        </span>       
+                        <span class="flag"v-if="element.original_language === 'it' ">
+                            <img src="./img/it.png" alt="">
+                        </span>
+                    </div>
+                </p>
+                <p>voto: 
+                    <i v-for="n in Voto(element.vote_average)"class="fas fa-star"></i>
+                    <i v-for="n in (5 - Voto(element.vote_average))" class="far fa-star"></i>
+
+                </p>  
+            </li>
+        </ul>    
+    </div>      
           <!-- parte serie tv-->
-    <div class="container">      
-        <div class=" box-element " v-for = ' element in boxSerieTv'>
-            <h1>{{element.name}}</h1>
-            <img :src="imgLink +(element.poster_path)" alt="">
-            <h5>{{element.original_name}}</h5>            
-            <span class="flag"v-if="element.original_language === 'en' "><img src="./img/en.png" alt=""></span>       
-            <span class="flag"v-if="element.original_language === 'it' "><img src="./img/it.png" alt=""></span>
-            <span >{{element.original_language}}</span>
-            <i v-for="n in Voto(element.vote_average)"class="fas fa-star"></i>
-            <i v-for="n in (5 - Voto(element.vote_average))" class="far fa-star"></i>
-        </div>
+    <div class="container"> 
+        <ul>
+            <li class=" box-element " v-for = ' element in boxSerieTv'>
+                <h1>{{element.name}}</h1>
+                <div class="box-img">
+                    <img :src="imgLink +(element.poster_path)" alt="">
+                </div>
+                <h5>{{element.original_name}}</h5>            
+                <p>lingua : 
+                    <div class="box-flag"> 
+                        <span class="flag"v-if="element.original_language === 'en' ">
+                        <img src="./img/en.png" alt="">
+                        </span>       
+                        <span class="flag"v-if="element.original_language === 'it' ">
+                            <img src="./img/it.png" alt="">
+                        </span>
+                    </div>
+                </p>
+                <p>voto:
+                    <i v-for="n in Voto(element.vote_average)"class="fas fa-star"></i>
+                    <i v-for="n in (5 - Voto(element.vote_average))" class="far fa-star"></i>
+                </p>  
+            </li>
+        </ul>     
     </div>
 </header>
 
