@@ -4,6 +4,7 @@ new Vue({
         boxListFilms:[],
         boxSerieTv:[],
         search:'',
+        imgLink:'https://image.tmdb.org/t/p/w500/'
     },
     methods:{
         totalSearch:function(){
