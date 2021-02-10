@@ -13,6 +13,10 @@ new Vue({
                    const arrayVideo=element.data.results;
                    self.boxListFilms=arrayVideo;  
                   });
+        },
+        //parte voto
+        Voto(element){
+            return Math.ceil(element / 2);
         }
     },
     mounted() {

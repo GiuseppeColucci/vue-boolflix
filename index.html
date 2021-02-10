@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <title>Document</title>
@@ -20,10 +21,12 @@
     <div class="container">      
         <div class=" box-element " v-for = ' element in boxListFilms '>
             <h1>{{element.title}}</h1>
-            <h5>{{element.original_title}}</h5>
-            <p>{{element.original_language}}</p>
-            <p>{{element.vote_average}}</p>
-           
+            <h5>{{element.original_title}}</h5>            
+            <span class="flag"v-if="element.original_language === 'en' "><img src="./img/en.png" alt=""></span>       
+            <span class="flag"v-if="element.original_language === 'it' "><img src="./img/it.png" alt=""></span>
+            <span >{{element.original_language}}</span>
+            <i v-for="n in Voto(element.vote_average)"class="fas fa-star"></i>
+            <i v-for="n in (5 - Voto(element.vote_average))" class="far fa-star"></i>
         </div>
     </div>
 </header>
