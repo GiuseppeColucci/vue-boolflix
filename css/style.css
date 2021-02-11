@@ -22,11 +22,12 @@ body{
 .title h1{
     color: red;
 }
-
+.container{
+    overflow-x: auto;
+}
 /* cars */
-
 .box-img{
-    height: 290px;  
+    height: 100%;  
 }
 .box-img img,.box-flag img{
     width: 100%;
@@ -37,19 +38,36 @@ body{
     width: 10px;
     height: 10px;
 }
-
 .box-flag img{
     border-radius: 50%;
-
 }
 .box-card .box-element-card {
    text-align: center;
     border: 1px solid black;
     width: 190px;
     list-style: none;
+    position: relative;
 }
 .box-card{
     display: inline-flex;
     height: 370px;
-
+}
+.hover{
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    top: 0px;
+    right: 0px;
+    font-size: 20px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.75);
+    height: 100%;
+    color:white;
+    padding: 25px 5px;
+    overflow-y: auto;
+    opacity: 0;
+    width: 100%;
+}
+.box-element-card .hover:hover {
+    opacity: 1;
 }

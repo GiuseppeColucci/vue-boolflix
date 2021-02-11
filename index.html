@@ -13,75 +13,80 @@
 <body>
     
 <div id="app">
-<nav>
-    <div class="container-nav">
-        <div class="title">
-            <h1>netflix</h1>
+    <nav>
+        <div class="container-nav">
+            <div class="title">
+                <img src="https://fontmeme.com/permalink/210211/69dfe28dc8c9bdcdb8ca6878bedab0b5.png" alt="">
+            </div>
+            <div class="searc-bar">
+                <input v-model='search'type="text">
+                <button @click='totalSearch'>cerca</button>
+            </div>
         </div>
-        <div class="searc-bar">
-            <input v-model='search'type="text">
-            <button @click='totalSearch'>cerca</button>
+    </nav>
+    <header>
+        <!-- parte films -->
+        <div class="container">  
+            <ul class="box-card">
+                <li class=" box-element-card " v-for = ' element in boxListFilms '>
+                    <div class="box-img">
+                        <img :src="imgLink +(element.poster_path)" alt="">
+                    </div>
+                    <div class="hover">
+                        <p>{{element.title}}</p>
+                        <h5>{{element.original_title}}</h5>
+                        <p>{{element.overview}}</p>
+                        <p>lingua : 
+                            <div class="box-flag"> 
+                                <span class="flag"v-if="element.original_language === 'en' ">
+                                <img src="./img/en.png" alt="">
+                                </span>       
+                                <span class="flag"v-if="element.original_language === 'it' ">
+                                    <img src="./img/it.png" alt="">
+                                </span>
+                            </div>
+                        </p>
+                        <p>voto: 
+                            <i v-for="n in Voto(element.vote_average)"class="fas fa-star"></i>
+                            <i v-for="n in (5 - Voto(element.vote_average))" class="far fa-star"></i>    
+                        </p>  
+                    </div>
+                </li>
+            </ul>    
+        </div>   
+    
+            <!-- parte serie tv-->
+        <div class="container"> 
+            <ul class="box-card">
+                <li class=" box-element-card " v-for = ' element in boxSerieTv'>
+                    <div class="box-img">
+                        <img :src="imgLink +(element.poster_path)" alt="">
+                    </div>
+                    <div class="hover">
+                        <p>{{element.name}}</p>
+                        <h5>{{element.original_name}}</h5>   
+                        <p>{{element.overview}}</p>
+                        <p>lingua : 
+                            <div class="box-flag"> 
+                                <span class="flag"v-if="element.original_language === 'en' ">
+                                <img src="./img/en.png" alt="">
+                                </span>       
+                                <span class="flag"v-if="element.original_language === 'it' ">
+                                    <img src="./img/it.png" alt="">
+                                </span>
+                            </div>
+                        </p>
+                        <p>voto:
+                            <i v-for="n in Voto(element.vote_average)"class="fas fa-star"></i>
+                            <i v-for="n in (5 - Voto(element.vote_average))" class="far fa-star"></i>
+                        </p>  
+                    </div>
+                </li>
+            </ul>     
         </div>
-    </div>
-</nav>
-<header>
-    <!-- parte films -->
-    <div class="container">  
-        <ul class="box-card">
-            <li class=" box-element-card " v-for = ' element in boxListFilms '>
-                <!-- <h3>{{element.title}}</h3> -->
-                <div class="box-img">
-                    <img :src="imgLink +(element.poster_path)" alt="">
-                </div>
-                <h5>{{element.original_title}}</h5>
-                <p>lingua : 
-                    <div class="box-flag"> 
-                        <span class="flag"v-if="element.original_language === 'en' ">
-                        <img src="./img/en.png" alt="">
-                        </span>       
-                        <span class="flag"v-if="element.original_language === 'it' ">
-                            <img src="./img/it.png" alt="">
-                        </span>
-                    </div>
-                </p>
-                <p>voto: 
-                    <i v-for="n in Voto(element.vote_average)"class="fas fa-star"></i>
-                    <i v-for="n in (5 - Voto(element.vote_average))" class="far fa-star"></i>
-
-                </p>  
-            </li>
-        </ul>    
-    </div>   
-   
-          <!-- parte serie tv-->
-    <div class="container"> 
-        <ul class="box-card">
-            <li class=" box-element-card " v-for = ' element in boxSerieTv'>
-                <!-- <h1>{{element.name}}</h1> -->
-                <div class="box-img">
-                    <img :src="imgLink +(element.poster_path)" alt="">
-                </div>
-                <h5>{{element.original_name}}</h5>            
-                <p>lingua : 
-                    <div class="box-flag"> 
-                        <span class="flag"v-if="element.original_language === 'en' ">
-                        <img src="./img/en.png" alt="">
-                        </span>       
-                        <span class="flag"v-if="element.original_language === 'it' ">
-                            <img src="./img/it.png" alt="">
-                        </span>
-                    </div>
-                </p>
-                <p>voto:
-                    <i v-for="n in Voto(element.vote_average)"class="fas fa-star"></i>
-                    <i v-for="n in (5 - Voto(element.vote_average))" class="far fa-star"></i>
-                </p>  
-            </li>
-        </ul>     
-    </div>
-</header>
-
-</div>
+    </header>
+    <!-- fine di VUE -->
+</div> 
 
 
 
