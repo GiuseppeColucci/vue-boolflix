@@ -22,16 +22,11 @@ body{
 .title h1{
     color: red;
 }
-.container{
-    width: 1200px;
-    margin: 0 auto;
-    background-color: aqua;
-}
+
 /* cars */
 
 .box-img{
-    width: 50px;
-    height: 100px;
+    height: 290px;  
 }
 .box-img img,.box-flag img{
     width: 100%;
@@ -45,5 +40,16 @@ body{
 
 .box-flag img{
     border-radius: 50%;
+
+}
+.box-card .box-element-card {
+   text-align: center;
+    border: 1px solid black;
+    width: 190px;
+    list-style: none;
+}
+.box-card{
+    display: inline-flex;
+    height: 370px;
 
 }
